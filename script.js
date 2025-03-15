@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     loadQuickLinks();
     createStars();
 
-    // Attach event listeners instead of inline onclick
     document.getElementById("searchButton").addEventListener("click", search);
     document.getElementById("addQuickLinkButton").addEventListener("click", addQuickLink);
     document.getElementById("settingsButton").addEventListener("click", toggleSettings);
 });
 
-// Improved search function
 function search() {
     let query = document.getElementById('searchInput').value.trim();
     if (query) {
@@ -45,19 +43,16 @@ function loadQuickLinks() {
     localStorage.setItem("quickLinks", JSON.stringify(links));
 }
 
-// Use event delegation to handle remove button clicks
 document.getElementById("quickLinks").addEventListener("click", (event) => {
     if (event.target.classList.contains("remove-btn")) {
         let index = event.target.getAttribute("data-index");
         removeQuickLink(index);
 
-        // After removing, hide only the clicked button
         event.target.style.display = "none";
     }
 });
 
 
-// Add new quick link
 function addQuickLink() {
     let name = document.getElementById("linkName").value.trim();
     let url = document.getElementById("linkURL").value.trim();
@@ -72,7 +67,6 @@ function addQuickLink() {
         
         loadQuickLinks();
 
-        // Ensure the form and remove buttons remain visible
         document.querySelector(".quick-links-form").style.display = "block";
         document.querySelectorAll(".remove-btn").forEach(btn => btn.classList.remove("hidden"));
     }
@@ -80,7 +74,6 @@ function addQuickLink() {
 
 
 
-// Remove a quick link
 function removeQuickLink(index) {
     let links = JSON.parse(localStorage.getItem("quickLinks")) || [];
     links.splice(index, 1);
@@ -89,7 +82,6 @@ function removeQuickLink(index) {
     loadQuickLinks();
 }
 
-// Create moving stars background
 function createStars() {
     let number_of_star = 150;
     let body = document.body;
@@ -115,7 +107,7 @@ function createStars() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".quick-links-form").style.display = "none"; // Ensure form is hidden
+    document.querySelector(".quick-links-form").style.display = "none"; 
     document.querySelectorAll(".remove-btn").forEach(btn => btn.style.display = "none");
 });
 
@@ -123,10 +115,8 @@ function toggleSettings() {
     let form = document.querySelector(".quick-links-form");
     let removeButtons = document.querySelectorAll(".remove-btn");
 
-    // Toggle the form
     form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
 
-    // Toggle the delete buttons
     removeButtons.forEach(button => {
         button.style.display = (button.style.display === "none" || button.style.display === "") ? "inline-block" : "none";
     });
