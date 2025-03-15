@@ -1,8 +1,6 @@
-/* Import fonts */
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:wght@200;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Jura|Rajdhani');
 
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +21,6 @@ body {
     position: relative;
 }
 
-/* Main Content Box */
 .main {
     display: flex;
     flex-direction: column;
@@ -38,7 +35,6 @@ body {
     z-index: 10;
 }
 
-/* Greeter */
 .greeter p {
     font-size: 1.6rem;
     font-weight: 400;
@@ -49,7 +45,6 @@ body {
     color: #00ff7f;
 }
 
-/* Search Bar */
 .search {
     display: flex;
     gap: 10px;
@@ -91,7 +86,6 @@ button:hover {
     color: black;
 }
 
-/* Quick Links Section */
 .quick-links-container {
     margin-top: 20px;
     width: 100%;
@@ -157,14 +151,13 @@ button:hover {
     background: #ff0000;
 }
 
-/* Add Quick Link Form */
 .quick-links-form {
     margin-top: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap; 
 }
 
 .quick-links-form input {
@@ -176,7 +169,7 @@ button:hover {
     color: white;
     outline: none;
     transition: 0.3s ease;
-    width: 200px; /* Set a fixed width to prevent wrapping */
+    width: 200px; 
 }
 
 .quick-links-form input:focus {
@@ -193,7 +186,7 @@ button:hover {
     border-radius: 6px;
     transition: 0.3s ease;
     font-weight: 500;
-    white-space: nowrap; /* Prevent button text from wrapping */
+    white-space: nowrap;
 }
 
 .quick-links-form button:hover {
@@ -202,7 +195,6 @@ button:hover {
 }
 
 
-/* Star Background Animation */
 .star {
     display: block;
     background-color: #fff;
@@ -223,7 +215,6 @@ button:hover {
     to   { transform: rotate(-360deg) translateX(8px) rotate(360deg); }
 }
 
-/* Star Twinkle Effect */
 @keyframes twinkle {
     0%, 100% { opacity: 0.6; }
     50% { opacity: 1; }
@@ -267,7 +258,7 @@ button:hover {
     width: 150%;
     height: 150%;
     object-fit: contain;
-    filter: invert(1); /* Makes it visible on dark backgrounds */
+    filter: invert(1); 
     transition: filter 0.3s ease;
 }
 
@@ -276,19 +267,14 @@ button:hover {
     transform: scale(1.1);
 }
 
-
-
-/* Hide elements initially */
 .hidden {
     display: none;
 }
 
-/* Hide elements initially */
 .quick-links-form {
-    display: none;  /* Ensures the form is hidden by default */
+    display: none;
 }
 
-/* Add smooth transition */
 .quick-links-form,
 .remove-btn {
     transition: all 0.3s ease;
