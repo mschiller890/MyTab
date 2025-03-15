@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Tab</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="main">
+            <div class="greeter">
+                <p>Welcome, <b>victus</b></p>
+            </div>
+            
+            <div class="search">
+                <input type="text" placeholder="Search or enter a URL..." id="searchInput">
+                <button id="searchButton">-></button>
+            </div>
+        </div>
+
+        <div class="quick-links-container">
+            <div class="quick-links" id="quickLinks"></div>
+
+            <div class="quick-links-form">
+                <input type="text" id="linkName" placeholder="Site Name">
+                <input type="url" id="linkURL" placeholder="URL">
+                <button id="addQuickLinkButton">Add</button>
+            </div>
+        </div>
+        <button id="settingsButton">
+            <img src="settings.png" alt="Settings">
+        </button>               
+    </body>
+    <script src="script.js"></script>
+</html>

@@ -1,0 +1,295 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jura|Rajdhani');
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Main Content Box */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+/* Greeter */
+.greeter p {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.greeter b {
+    font-weight: 700;
+    color: #00ff7f;
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+button {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: none;
+    background: #00ff7f;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+/* Quick Links Section */
+.quick-links-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 10;
+}
+
+.quick-links-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #00ff7f;
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.quick-links .quick-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+
+.quick-links .quick-link-item a {
+    flex: 1;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.quick-links .quick-link-item:hover {
+    background: #00ff7f;
+    color: black;
+}
+
+.quick-links .quick-link-item:hover a {
+    color: black;
+}
+
+.remove-btn {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #ff0000;
+}
+
+/* Add Quick Link Form */
+.quick-links-form {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.quick-links-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+    width: 200px; /* Set a fixed width to prevent wrapping */
+}
+
+.quick-links-form input:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.quick-links-form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    background: #00ff7f;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.quick-links-form button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* Star Background Animation */
+.star {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 100%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+}
+
+@keyframes move_right {
+   from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@keyframes move_left {
+   from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+    to   { transform: rotate(-360deg) translateX(8px) rotate(360deg); }
+}
+
+/* Star Twinkle Effect */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.star {
+    animation: twinkle 5s infinite alternate;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .main {
+        max-width: 90%;
+        padding: 20px;
+    }
+    
+    .quick-links {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Settings Button */
+#settingsButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+#settingsButton img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+    filter: invert(1); /* Makes it visible on dark backgrounds */
+    transition: filter 0.3s ease;
+}
+
+#settingsButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+
+
+/* Hide elements initially */
+.hidden {
+    display: none;
+}
+
+/* Hide elements initially */
+.quick-links-form {
+    display: none;  /* Ensures the form is hidden by default */
+}
+
+/* Add smooth transition */
+.quick-links-form,
+.remove-btn {
+    transition: all 0.3s ease;
+}

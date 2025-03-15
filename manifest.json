@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Blank Custom New Tab",
+  "version": "1.0",
+  "description": "Replaces the default new tab with a custom blank page with an empty search bar.",
+  "chrome_url_overrides": {
+    "newtab": "NewTab.html"
+  }
+}
+
